@@ -58,9 +58,20 @@ document.addEventListener("DOMContentLoaded", () => {
             "bilder/16.jpg"
         ];
 
-        movie.style.width = "100%";
-        movie.style.height = "100%";
-        movie.style.objectFit = "cover";
+        movie.style.position = "absolute";
+movie.style.inset = "0";
+movie.style.width = "100%";
+movie.style.height = "100%";
+movie.style.objectFit = "cover";
+
+const slideshow = document.getElementById("slideshow");
+slideshow.style.position = "absolute";
+slideshow.style.inset = "0";
+slideshow.style.width = "100%";
+slideshow.style.height = "100%";
+slideshow.style.display = "flex";
+slideshow.style.justifyContent = "center";
+slideshow.style.alignItems = "center";
 
         movie.play();
 
