@@ -66,11 +66,11 @@ movie.removeAttribute("autoplay");
 const slideshow = document.getElementById("slideshow");
 slideshow.style.position = "absolute";
 slideshow.style.inset = "0";
-slideshow.style.width = "100%";
-slideshow.style.height = "100%";
-slideshow.style.display = "flex";
-slideshow.style.justifyContent = "center";
-slideshow.style.alignItems = "center";
+movie.style.width = "100%";
+movie.style.height = "100%";
+movie.style.objectFit = "cover";
+
+movie.play();
 
         movie.play();
 
