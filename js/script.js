@@ -60,9 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         movie.style.position = "absolute";
 movie.style.inset = "0";
-movie.style.width = "100%";
-movie.style.height = "100%";
-movie.style.objectFit = "cover";
+movie.setAttribute("controls", "");
+movie.removeAttribute("autoplay");
 
 const slideshow = document.getElementById("slideshow");
 slideshow.style.position = "absolute";
