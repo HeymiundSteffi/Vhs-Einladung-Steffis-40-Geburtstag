@@ -22,103 +22,50 @@ body {
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* ==========================================
-   Intro
-========================================== */
-
-#intro {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 9999;
+#intro{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    z-index:9999;
 }
 
-/* Hintergrund */
-
-#background {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
+#background{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
 }
 
-/* ==========================================
-   Fernseher
-========================================== */
-
-#tv {
-    position: absolute;
-    left: 33.2%;
-    top: 17%;
-
-    width: 31.5%;
-    height: 44%;
-
-    background: #000;
-
-    border-radius: 22px;
-    overflow: hidden;
-
-    z-index: 100;
-
-    animation:
-        flicker .12s infinite alternate,
-        tvGlow 2s infinite alternate;
+#tv{
+    position:absolute;
+    left:50%;
+    top:39%;
+    width:min(31.5vw,520px);
+    aspect-ratio:31.5/44;
+    transform:translate(-50%,-50%);
+    background:#000;
+    border-radius:22px;
+    overflow:hidden;
+    z-index:100;
 }
 
-/* Fernseher Inhalt */
-
-#noise,
-#tracking,
-#video {
-    position: absolute;
-    inset: 0;
+#noise,#tracking,#video,#slideshow{
+    position:absolute;
+    inset:0;
 }
 
-#noise {
-    opacity: 0;
-    background:
-        repeating-linear-gradient(
-            0deg,
-            rgba(255,255,255,.08) 0px,
-            rgba(255,255,255,.08) 2px,
-            transparent 2px,
-            transparent 4px
-        );
+@media (max-width:768px){
+    #tv{
+        width:52vw;
+        top:39%;
+        left:50%;
+    }
 }
-
-#tracking {
-    opacity: 0;
-    background: rgba(255,255,255,.05);
-}
-
-#video {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    color: white;
-
-    opacity: 0;
-    transition: opacity 1.5s ease;
-}
-
-#play {
-    color: #00ff66;
-    font-size: 16px;
-    margin-bottom: 14px;
-    letter-spacing: 2px;
-
-    animation: blink 1s infinite;
-}
-
 #title h1 {
     font-size: 30px;
     color: white;
