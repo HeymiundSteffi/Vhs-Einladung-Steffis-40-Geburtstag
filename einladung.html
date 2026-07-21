@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Steffis Zeitreise</title>
+
+    <link rel="stylesheet" href="css/einladung.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="noise"></div>
+
+<main class="container">
+
+    <!-- ===================================== -->
+    <!-- HERO -->
+    <!-- ===================================== -->
+
+    <section class="card hero">
+
+        <div class="hero-badge">
+            🎉 40 Jahre voller Erinnerungen
+        </div>
+<p class="intro">
+
+            Es gibt Momente im Leben, die man einfach gemeinsam feiern muss.
+            Deshalb möchten wir mit euch auf eine Reise durch viele schöne
+            Kindheitserinnerungen, besondere Augenblicke und unvergessliche
+            Geschichten gehen.
+
+        </p>
+
+        <div class="hero-message">
+
+            <p>
+
+                Es gibt Momente im Leben, die man einfach gemeinsam feiern muss. Deshalb möchte ich mit euch auf eine Reise durch verschiedene Kindheitserinnerungen gehen.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- COUNTDOWN -->
+    <!-- ===================================== -->
+
+    <section class="card" id="countdown-section">
+
+        <h2>⏳ Der Countdown läuft</h2>
+
+        <div id="countdown-display">
+
+            <div class="time-box">
+                <span id="days">00</span>
+                <small>Tage</small>
+            </div>
+
+            <div class="separator">:</div>
+
+            <div class="time-box">
+                <span id="hours">00</span>
+                <small>Stunden</small>
+            </div>
+
+            <div class="separator">:</div>
+
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <small>Minuten</small>
+            </div>
+
+            <div class="separator">:</div>
+
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <small>Sekunden</small>
+            </div>
+
+        </div>
+
+        <p class="countdown-info">
+
+            Bis wir gemeinsam auf meinen 40. Geburtstag anstoßen.
+
+        </p>
+
+    </section>
+        <!-- ===================================== -->
+    <!-- EVENTINFOS -->
+    <!-- ===================================== -->
+
+    <section class="card">
+
+        <h2>📅 Die wichtigsten Informationen</h2>
+
+        <div class="info-grid">
+
+            <div class="info-item">
+
+                <div class="icon">📆</div>
+
+                <h3>Datum</h3>
+
+                <p>
+                    Dienstag<br>
+                    <strong>22. Dezember 2026</strong>
+                </p>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="icon">🕔</div>
+
+                <h3>Beginn</h3>
+
+                <p>
+                    ab <strong>17:00 Uhr</strong>
+                </p>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="icon">📍</div>
+
+                <h3>Location</h3>
+
+                <p>
+                    Hotel-Restaurant Kniep<br>
+                    Bahnhofstraße 5<br>
+                    42499 Hückeswagen
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- ROUTE -->
+    <!-- ===================================== -->
+
+    <section class="card" id="route">
+
+        <h2>🧭 Der Weg zur Feier</h2>
+
+        <p>
+
+            Damit ihr ganz entspannt ankommt, könnt ihr euch die Route
+            direkt in Google Maps öffnen.
+
+        </p>
+
+        <a
+            class="maps-button"
+            href="https://maps.google.com/?q=Hotel-Restaurant+Kniep+Bahnhofstraße+5+42499+Hückeswagen"
+            target="_blank">
+
+            📍 Route starten
+
+        </a>
+
+        <p class="small-text">
+
+            Wir freuen uns darauf, mit euch einen wunderschönen Abend zu verbringen.
+
+        </p>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- HOTEL -->
+    <!-- ===================================== -->
+
+    <section class="card">
+
+        <div class="hotel-box">
+
+            <h2>🏨 Übernachtung</h2>
+
+            <p>
+
+                Falls ihr nach der Feier nicht mehr nach Hause fahren
+                möchtet, könnt ihr im Formular einfach angeben,
+                dass ihr ein Zimmer benötigt.
+
+            </p>
+
+        </div>
+
+    </section>
+        <!-- ===================================== -->
+    <!-- RSVP -->
+    <!-- ===================================== -->
+
+    <section class="card" id="rsvp">
+
+        <h2>💌 Seid ihr dabei?</h2>
+
+        <form>
+
+            <div class="form-group">
+
+                <label for="name">Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Euer Name"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Kommt ihr mit auf die Zeitreise?</label>
+
+                <div class="radio-group">
+
+                    <div class="radio-option">
+
+                        <input
+                            type="radio"
+                            id="zusage"
+                            name="teilnahme"
+                            value="Ja">
+
+                        <label for="zusage">
+                            🥳 Ja, wir freuen uns schon!
+                        </label>
+
+                    </div>
+
+                    <div class="radio-option">
+
+                        <input
+                            type="radio"
+                            id="absage"
+                            name="teilnahme"
+                            value="Nein">
+
+                        <label for="absage">
+                            😊 Leider klappt es diesmal nicht.
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="personen">
+                    Mit wie vielen Personen kommt ihr?
+                </label>
+
+                <select id="personen" name="personen">
+
+                    <option>1 Person</option>
+                    <option>2 Personen</option>
+                    <option>3 Personen</option>
+                    <option>4 Personen</option>
+                    <option>5 Personen</option>
+                    <option>6 Personen</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Benötigt ihr ein Hotelzimmer?
+                </label>
+
+                <div class="radio-group">
+
+                    <div class="radio-option">
+
+                        <input
+                            type="radio"
+                            id="zimmer-ja"
+                            name="hotel"
+                            value="Ja">
+
+                        <label for="zimmer-ja">
+                            🛏️ Ja, bitte.
+                        </label>
+
+                    </div>
+
+                    <div class="radio-option">
+
+                        <input
+                            type="radio"
+                            id="zimmer-nein"
+                            name="hotel"
+                            value="Nein">
+
+                        <label for="zimmer-nein">
+                            👍 Nein, danke.
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="erinnerung">
+
+                    Welche Kindheitserinnerung darf auf
+                    Steffis Geburtstag auf keinen Fall fehlen?
+
+                </label>
+
+                <textarea
+                    id="erinnerung"
+                    name="erinnerung"
+                    placeholder="Schreibt eure Erinnerung hier hinein..."></textarea>
+
+            </div>
+
+            <button class="submit-btn" type="submit">
+
+                🎉 Ich bin bereit für die Zeitreise!
+
+            </button>
+
+        </form>
+
+    </section>
+        <!-- ===================================== -->
+    <!-- ÜBERRASCHUNG -->
+    <!-- ===================================== -->
+
+    <section class="card" id="surprise">
+
+        <h2>🎁 Eine kleine Überraschung wartet...</h2>
+
+        <div class="surprise-card">
+
+            <h3>Noch ist nicht alles zu sehen.</h3>
+
+            <p>
+
+                Am Abend der Feier hält diese Seite noch eine kleine
+                Überraschung bereit. Schaut nach der Feier unbedingt
+                noch einmal vorbei – vielleicht entdeckt ihr etwas,
+                womit ihr heute noch gar nicht rechnet.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- ZEITKAPSEL -->
+    <!-- ===================================== -->
+
+    <section class="card" id="timecapsule">
+
+        <h2>🔒 Steffis Zeitkapsel</h2>
+
+        <div class="capsule-card">
+
+            <div class="lock-icon">
+                🔐
+            </div>
+
+            <h3>Noch verschlossen...</h3>
+
+            <p>
+
+                Manche Erinnerungen brauchen den richtigen Zeitpunkt.
+
+                Diese Zeitkapsel bleibt bis nach der Feier verschlossen.
+
+            </p>
+
+            <div class="unlock-date">
+
+                Freischaltung am<br>
+                <strong>24. Dezember 2026</strong>
+
+            </div>
+
+        </div>
+
+        <div class="notice">
+
+            <p>
+
+                Nach der Feier lohnt sich ein weiterer Besuch.
+                Vielleicht warten dort bereits die ersten gemeinsamen
+                Erinnerungen auf euch.
+
+            </p>
+
+        </div>
+
+    </section>
+       <!-- ===================================== -->
+    <!-- ABSCHLUSS -->
+    <!-- ===================================== -->
+
+    <footer>
+
+        <h2>❤️ Wir freuen uns auf euch!</h2>
+
+        <p>
+
+            Vielen Dank, dass ihr euch die Zeit genommen habt,
+            unsere Einladung anzuschauen.
+
+        </p>
+
+        <p style="margin-top:20px;">
+
+            Es bedeutet uns sehr viel, diesen besonderen Tag
+            gemeinsam mit Familie und Freunden feiern zu dürfen.
+
+        </p>
+
+        <div class="footer-divider"></div>
+
+        <p>
+
+            Bitte gebt uns über das Formular Bescheid,
+            dass ihr dabei seid.
+
+        </p>
+
+        <div class="signature">
+
+            Steffi, dank tatkräftiger Unterstützung von Christian
+
+        </div>
+
+    </footer>
+
+</main>
+
+<!-- ===================================== -->
+<!-- COUNTDOWN -->
+<!-- ===================================== -->
+
+<script>
+
+const targetDate = new Date("December 22, 2026 17:00:00").getTime();
+
+const countdown = setInterval(function(){
+
+    const now = new Date().getTime();
+
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = String(days).padStart(2,"0");
+    document.getElementById("hours").textContent = String(hours).padStart(2,"0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
+
+    if(distance < 0){
+
+        clearInterval(countdown);
+
+        document.getElementById("countdown-display").innerHTML =
+        "<h2>🎉 Die Zeitreise beginnt jetzt!</h2>";
+
+    }
+
+},1000);
+
+</script>
+
+</body>
+
+</html> 

@@ -1,0 +1,564 @@
+/* ==========================================
+   Steffis 40 - VHS Einladung
+   ========================================== */
+
+/* ==========================================
+   Grundeinstellungen
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #111;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ==========================================
+   Intro
+========================================== */
+
+#intro {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+/* Hintergrund */
+
+#background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+/* ==========================================
+   Fernseher
+========================================== */
+
+#tv {
+    position: absolute;
+    left: 33.2%;
+    top: 17%;
+
+    width: 31.5%;
+    height: 44%;
+
+    background: #000;
+
+    border-radius: 22px;
+    overflow: hidden;
+
+    z-index: 100;
+
+    animation:
+        flicker .12s infinite alternate,
+        tvGlow 2s infinite alternate;
+}
+
+/* Fernseher Inhalt */
+
+#noise,
+#tracking,
+#video {
+    position: absolute;
+    inset: 0;
+}
+
+#noise {
+    opacity: 0;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,.08) 0px,
+            rgba(255,255,255,.08) 2px,
+            transparent 2px,
+            transparent 4px
+        );
+}
+
+#tracking {
+    opacity: 0;
+    background: rgba(255,255,255,.05);
+}
+
+#video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: white;
+
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+#play {
+    color: #00ff66;
+    font-size: 16px;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+
+    animation: blink 1s infinite;
+}
+
+#title h1 {
+    font-size: 30px;
+    color: white;
+
+    text-shadow:
+        0 0 6px rgba(255,255,255,.8),
+        0 0 12px rgba(255,255,255,.4);
+}
+
+#title p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #ff6ec7;
+}
+/* ==========================================
+   Röhren-TV Effekte
+========================================== */
+
+#tv::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            transparent 0px,
+            rgba(255,255,255,.04) 2px,
+            transparent 4px
+        );
+
+    animation: scanMove .12s linear infinite;
+    opacity: .45;
+}
+
+#tv::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: radial-gradient(
+        circle,
+        rgba(255,255,255,.05),
+        rgba(0,0,0,.35)
+    );
+}
+
+@keyframes scanMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 8px;
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: .35;
+    }
+}
+
+@keyframes flicker {
+    from {
+        filter: brightness(.92);
+    }
+
+    to {
+        filter: brightness(1.02);
+    }
+}
+
+@keyframes tvGlow {
+    from {
+        box-shadow:
+            inset 0 0 20px rgba(0,255,120,.08),
+            0 0 5px rgba(0,255,120,.08);
+    }
+
+    to {
+        box-shadow:
+            inset 0 0 45px rgba(0,255,120,.20),
+            0 0 18px rgba(0,255,120,.20);
+    }
+}
+
+/* ==========================================
+   Begrüßung
+========================================== */
+
+#welcome {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    padding-bottom: 90px;
+
+    background: transparent;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 1.2s ease;
+
+    z-index: 200;
+}
+
+#welcome.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.welcome-overlay {
+    width: min(90%, 700px);
+
+    padding: 40px;
+
+    text-align: center;
+
+    background: rgba(0,0,0,.85);
+
+    border-radius: 18px;
+}
+
+.welcome-overlay h2 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+.welcome-overlay p {
+    color: #f2f2f2;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.welcome-overlay h3 {
+    margin-top: 30px;
+    color: white;
+    font-size: 1.6rem;
+}
+
+#startInvitation {
+    margin-top: 35px;
+
+    padding: 16px 34px;
+
+    background: transparent;
+
+    color: white;
+
+    border: 2px solid #ff6ec7;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    transition: .3s;
+}
+
+#startInvitation:hover {
+    background: #ff6ec7;
+    color: black;
+}
+
+/* ==========================================
+   Animationen
+========================================== */
+
+.fade-in {
+    animation: fadeIn 1.5s forwards;
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width:768px) {
+
+    #tv {
+        left: 24%;
+        top: 20%;
+        width: 52%;
+        height: 40%;
+    }
+
+    .welcome-overlay {
+        width: 92%;
+        padding: 25px;
+    }
+
+    .welcome-overlay h2 {
+        font-size: 2rem;
+    }
+
+    .welcome-overlay p {
+        font-size: 1rem;
+    }
+
+    .welcome-overlay h3 {
+        font-size: 1.3rem;
+    }
+
+    #startInvitation {
+        width: 100%;
+    }
+}
+/* ==========================================
+   Text im Intro-Video
+========================================== */
+
+#movieText {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    opacity: 0;
+
+    transition: opacity 1.5s ease;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,.8),
+        0 0 20px rgba(255,255,255,.5);
+}
+
+#movieText h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+#movieText p {
+    font-size: 1.4rem;
+    max-width: 80%;
+    line-height: 1.5;
+}
+/* ==========================
+   Bilder über dem VHS-Video
+========================== */
+
+#slideshow {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 20;
+}
+
+#slide {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+
+    border: 8px solid white;
+    box-shadow: 0 0 30px rgba(0,0,0,.6);
+
+    opacity: 0;
+    transform: scale(.9);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+#slide.show {
+    opacity: 1;
+    transform: scale(1);
+}
+/* ============================= */
+/* Einladung */
+/* ============================= */
+
+
+
+.hero,
+.info,
+.countdown,
+.antwort {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 35px rgba(0,0,0,.4);
+}
+
+.hero h1,
+.info h2,
+.countdown h2,
+.antwort h2{
+    text-align:center;
+    color:#f2c94c;
+    margin-bottom:25px;
+}
+
+.intro{
+    text-align:center;
+    font-size:1.3rem;
+    margin-bottom:30px;
+}
+
+.card{
+    background:#222;
+    padding:25px;
+    border-radius:15px;
+    margin:20px 0;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.card h3{
+    color:#f2c94c;
+    margin-top:0;
+}
+
+#timer{
+    font-size:2rem;
+    text-align:center;
+    font-weight:bold;
+    color:#f2c94c;
+    padding:25px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+input[type=text],
+textarea{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#2d2d2d;
+    color:white;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+textarea{
+    resize:vertical;
+}
+
+label{
+    font-size:18px;
+}
+
+button{
+    padding:15px;
+    font-size:18px;
+    background:#f2c94c;
+    color:#111;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:bold;
+}
+
+button:hover{
+    transform:scale(1.03);
+    background:#ffd95e;
+}
+
+@media (max-width:768px){
+
+.hero,
+.info,
+.countdown,
+.antwort{
+
+    margin:20px;
+    padding:25px;
+
+}
+
+.hero h1{
+    font-size:2rem;
+}
+
+#timer{
+    font-size:1.5rem;
+}
+
+}
