@@ -1,8 +1,29 @@
 // ==========================================
+// Hintergrund je nach Gerät
+// ==========================================
+
+function updateBackground() {
+    const bg = document.getElementById("background");
+
+    if (!bg) return;
+
+    if (window.innerWidth <= 767) {
+        bg.src = "bilder/startseite-handy.jpg";
+    } else if (window.innerWidth <= 1199) {
+        bg.src = "bilder/startseite-tablet.jpg";
+    } else {
+        bg.src = "bilder/startseite.png";
+    }
+}
+
+// ==========================================
 // Steffis 40 - VHS Intro
 // ==========================================
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    updateBackground();
+    window.addEventListener("resize", updateBackground);
 
     const noise = document.getElementById("noise");
     const tracking = document.getElementById("tracking");
@@ -89,15 +110,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         setTimeout(() => {
+
             zeigeBild();
 
-         if (bgMusic) {
-             bgMusic.volume = 0.3;
-             bgMusic.play().catch(err => console.log(err));
-        }   
+            if (bgMusic) {
+                bgMusic.volume = 0.3;
+                bgMusic.play().catch(err => console.log(err));
+            }
 
         }, 2000);
-            movie.addEventListener("ended", () => {
+
+        movie.addEventListener("ended", () => {
 
             if (bgMusic) {
 
@@ -129,7 +152,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }, 1500);
 
-});    
+});
+
 /* ============================
    Countdown bis 22.12.2026
 ============================ */
@@ -201,6 +225,7 @@ ${message}`;
     });
 
 }
+
 // ============================
 // Button zur Einladung
 // ============================
