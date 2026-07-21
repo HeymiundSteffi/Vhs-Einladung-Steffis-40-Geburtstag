@@ -1,6 +1,6 @@
 /* ==========================================
    Steffis 40 - VHS Einladung
-   ========================================== */
+========================================== */
 
 /* ==========================================
    Grundeinstellungen
@@ -60,7 +60,6 @@ body {
     height: 44%;
 
     background: #000;
-
     border-radius: 22px;
     overflow: hidden;
 
@@ -70,8 +69,6 @@ body {
         flicker .12s infinite alternate,
         tvGlow 2s infinite alternate;
 }
-
-/* Fernseher Inhalt */
 
 #noise,
 #tracking,
@@ -105,7 +102,6 @@ body {
     text-align: center;
 
     color: white;
-
     opacity: 0;
     transition: opacity 1.5s ease;
 }
@@ -115,7 +111,6 @@ body {
     font-size: 16px;
     margin-bottom: 14px;
     letter-spacing: 2px;
-
     animation: blink 1s infinite;
 }
 
@@ -133,6 +128,7 @@ body {
     font-size: 18px;
     color: #ff6ec7;
 }
+
 /* ==========================================
    Röhren-TV Effekte
 ========================================== */
@@ -168,29 +164,17 @@ body {
 }
 
 @keyframes scanMove {
-    from {
-        background-position: 0 0;
-    }
-
-    to {
-        background-position: 0 8px;
-    }
+    from { background-position: 0 0; }
+    to { background-position: 0 8px; }
 }
 
 @keyframes blink {
-    50% {
-        opacity: .35;
-    }
+    50% { opacity: .35; }
 }
 
 @keyframes flicker {
-    from {
-        filter: brightness(.92);
-    }
-
-    to {
-        filter: brightness(1.02);
-    }
+    from { filter: brightness(.92); }
+    to { filter: brightness(1.02); }
 }
 
 @keyframes tvGlow {
@@ -238,13 +222,9 @@ body {
 
 .welcome-overlay {
     width: min(90%, 700px);
-
     padding: 40px;
-
     text-align: center;
-
     background: rgba(0,0,0,.85);
-
     border-radius: 18px;
 }
 
@@ -269,21 +249,13 @@ body {
 
 #startInvitation {
     margin-top: 35px;
-
     padding: 16px 34px;
-
     background: transparent;
-
     color: white;
-
     border: 2px solid #ff6ec7;
-
     border-radius: 8px;
-
     cursor: pointer;
-
     font-size: 1rem;
-
     transition: .3s;
 }
 
@@ -309,59 +281,62 @@ body {
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
 /* ==========================================
-   Responsive
+   Tablet
 ========================================== */
 
-@media (min-width: 769px) and (max-width: 1199px) {
+@media (min-width:769px) and (max-width:1199px) {
 
-    #tv {
-        left: 31.8%;
-        top: 18%;
-        width: 33%;
-        height: 45%;
+    #tv{
+        left:33.2%;
+        top:17%;
+        width:31.5%;
+        height:44%;
     }
 
 }
 
-    .welcome-overlay {
-        width: 92%;
-        padding: 25px;
+/* ==========================================
+   Handy
+========================================== */
+
+@media (max-width:768px){
+
+    #tv{
+        left:24%;
+        top:20%;
+        width:52%;
+        height:40%;
     }
 
-    .welcome-overlay h2 {
-        font-size: 2rem;
+    .welcome-overlay{
+        width:92%;
+        padding:25px;
     }
 
-    .welcome-overlay p {
-        font-size: 1rem;
+    .welcome-overlay h2{
+        font-size:2rem;
     }
 
-    .welcome-overlay h3 {
-        font-size: 1.3rem;
+    .welcome-overlay p{
+        font-size:1rem;
     }
 
-    #startInvitation {
-        width: 100%;
+    .welcome-overlay h3{
+        font-size:1.3rem;
+    }
+
+    #startInvitation{
+        width:100%;
     }
 }
 /* ==========================================
@@ -380,13 +355,11 @@ body {
     text-align: center;
 
     color: white;
-
     opacity: 0;
 
     transition: opacity 1.5s ease;
 
     z-index: 20;
-
     pointer-events: none;
 
     text-shadow:
@@ -405,16 +378,19 @@ body {
     max-width: 80%;
     line-height: 1.5;
 }
-/* ==========================
+
+/* ==========================================
    Bilder über dem VHS-Video
-========================== */
+========================================== */
 
 #slideshow {
     position: absolute;
     inset: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     pointer-events: none;
     z-index: 20;
 }
@@ -439,11 +415,9 @@ body {
     opacity: 1;
     transform: scale(1);
 }
-/* ============================= */
-/* Einladung */
-/* ============================= */
-
-
+/* ==========================================
+   Einladung
+========================================== */
 
 .hero,
 .info,
@@ -452,115 +426,128 @@ body {
     max-width: 900px;
     margin: 60px auto;
     padding: 40px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.12);
+
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.12);
     border-radius: 20px;
+
     backdrop-filter: blur(10px);
+
     box-shadow: 0 10px 35px rgba(0,0,0,.4);
 }
 
 .hero h1,
 .info h2,
 .countdown h2,
-.antwort h2{
-    text-align:center;
-    color:#f2c94c;
-    margin-bottom:25px;
+.antwort h2 {
+    text-align: center;
+    color: #f2c94c;
+    margin-bottom: 25px;
 }
 
-.intro{
-    text-align:center;
-    font-size:1.3rem;
-    margin-bottom:30px;
+.intro {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
 }
 
-.card{
-    background:#222;
-    padding:25px;
-    border-radius:15px;
-    margin:20px 0;
-    transition:.3s;
+.card {
+    background: #222;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+
+    transition: .3s;
 }
 
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,.4);
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.4);
 }
 
-.card h3{
-    color:#f2c94c;
-    margin-top:0;
+.card h3 {
+    color: #f2c94c;
+    margin-top: 0;
 }
 
-#timer{
-    font-size:2rem;
-    text-align:center;
-    font-weight:bold;
-    color:#f2c94c;
-    padding:25px;
+#timer {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    color: #f2c94c;
+    padding: 25px;
 }
 
-form{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 input[type=text],
-textarea{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:10px;
-    background:#2d2d2d;
-    color:white;
-    font-size:16px;
-    box-sizing:border-box;
+textarea {
+    width: 100%;
+    padding: 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #2d2d2d;
+    color: white;
+
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
-textarea{
-    resize:vertical;
+textarea {
+    resize: vertical;
 }
 
-label{
-    font-size:18px;
+label {
+    font-size: 18px;
 }
 
-button{
-    padding:15px;
-    font-size:18px;
-    background:#f2c94c;
-    color:#111;
-    border:none;
-    border-radius:12px;
-    cursor:pointer;
-    transition:.3s;
-    font-weight:bold;
+button {
+    padding: 15px;
+    font-size: 18px;
+
+    background: #f2c94c;
+    color: #111;
+
+    border: none;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: .3s;
+    font-weight: bold;
 }
 
-button:hover{
-    transform:scale(1.03);
-    background:#ffd95e;
+button:hover {
+    transform: scale(1.03);
+    background: #ffd95e;
 }
 
-@media (max-width:768px){
+/* ==========================================
+   Mobile Einladung
+========================================== */
 
-.hero,
-.info,
-.countdown,
-.antwort{
+@media (max-width:768px) {
 
-    margin:20px;
-    padding:25px;
+    .hero,
+    .info,
+    .countdown,
+    .antwort {
+        margin: 20px;
+        padding: 25px;
+    }
 
-}
+    .hero h1 {
+        font-size: 2rem;
+    }
 
-.hero h1{
-    font-size:2rem;
-}
-
-#timer{
-    font-size:1.5rem;
-}
+    #timer {
+        font-size: 1.5rem;
+    }
 
 }
