@@ -1,19 +1,130 @@
 // ==========================================
-// Hintergrund je nach Gerät
+// Hintergrund und Fernseher positionieren
 // ==========================================
 
 function updateBackground() {
-    const bg = document.getElementById("background");
+    const background = document.getElementById("background");
 
-    if (!bg) return;
+    if (!background) return;
 
-    if (window.innerWidth <= 767) {
-        bg.src = "bilder/startseite-handy.jpg";
-    } else if (window.innerWidth <= 1199) {
-        bg.src = "bilder/startseite-tablet.jpg";
-    } else {
-        bg.src = "bilder/startseite.png";
+    const isMobile = window.innerWidth <= 767;
+
+    const newSource = isMobile
+        ? "bilder/startseite-handy.jpg"
+        : "bilder/startseite.png";
+
+    /*
+     * Das Bild nur neu laden, wenn sich die Datei wirklich ändert.
+     */
+    if (!background.src.endsWith(newSource)) {
+        background.src = newSource;
     }
+
+    /*
+     * Falls das Bild bereits geladen ist, direkt positionieren.
+     */
+    if (background.complete && background.naturalWidth > 0) {
+        positionVideoOnTelevision();
+    }
+}
+
+
+function positionVideoOnTelevision() {
+    const background = document.getElementById("background");
+    const television = document.getElementById("tv");
+
+    if (!background || !television) return;
+
+    if (!background.naturalWidth || !background.naturalHeight) return;
+
+    const intro = document.getElementById("intro");
+
+    if (!intro) return;
+    
+    const introRect = intro.getBoundingClientRect();
+    
+    const viewportWidth = introRect.width;
+    const viewportHeight = introRect.height;
+
+    const imageRatio =
+        background.naturalWidth / background.naturalHeight;
+
+    const viewportRatio =
+        viewportWidth / viewportHeight;
+
+    let renderedWidth;
+    let renderedHeight;
+    let imageLeft;
+    let imageTop;
+
+    /*
+     * Berechnet die tatsächliche Größe des Hintergrundbildes
+     * entsprechend object-fit: cover.
+     */
+    if (viewportRatio > imageRatio) {
+        renderedWidth = viewportWidth;
+        renderedHeight = viewportWidth / imageRatio;
+
+        imageLeft = 0;
+        imageTop = (viewportHeight - renderedHeight) / 2;
+    } else {
+        renderedHeight = viewportHeight;
+        renderedWidth = viewportHeight * imageRatio;
+
+        imageTop = 0;
+        imageLeft = (viewportWidth - renderedWidth) / 2;
+    }
+
+    /*
+     * Hintergrund exakt auf die berechnete Fläche setzen.
+     */
+    background.style.position = "absolute";
+    background.style.inset = "auto";
+    background.style.left = "50%";
+    background.style.top = "50%";
+    background.style.transform = "translate(-50%, -50%)";
+    background.style.width = `${renderedWidth}px`;
+    background.style.height = `${renderedHeight}px`;
+    background.style.maxWidth = "none";
+    background.style.objectFit = "fill";
+    background.style.display = "block";
+
+    const isMobile = viewportWidth <= 767;
+
+    /*
+     * Position des TV-Bildschirms innerhalb der beiden Bilder.
+     */
+    const tvPosition = isMobile
+        ? {
+            left: 0.253,
+            top: 0.215,
+            width: 0.524,
+            height: 0.226
+        }
+        : {
+            left: 0.332,
+            top: 0.17,
+            width: 0.313,
+            height: 0.397
+        };
+
+    /*
+     * Fernseher relativ zum tatsächlich sichtbaren Bild positionieren.
+     */
+    television.style.position = "absolute";
+    television.style.transform = "none";
+
+    television.style.left =
+        `${imageLeft + renderedWidth * tvPosition.left}px`;
+
+    television.style.top =
+        `${imageTop + renderedHeight * tvPosition.top}px`;
+
+    television.style.width =
+        `${renderedWidth * tvPosition.width}px`;
+
+    television.style.height =
+        `${renderedHeight * tvPosition.height}px`;
 }
 
 // ==========================================
@@ -22,8 +133,20 @@ function updateBackground() {
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    const background = document.getElementById("background");
+
+if (background) {
+    background.addEventListener("load", () => {
+        positionVideoOnTelevision();
+    });
+}
+
+updateBackground();
+
+window.addEventListener("resize", () => {
     updateBackground();
-    window.addEventListener("resize", updateBackground);
+    positionVideoOnTelevision();
+});
 
     const noise = document.getElementById("noise");
     const tracking = document.getElementById("tracking");
