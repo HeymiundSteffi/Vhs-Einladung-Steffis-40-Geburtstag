@@ -230,7 +230,7 @@ window.addEventListener("resize", () => {
                     zeigeBild();
                 }, 200);
 
-            }, 1500);
+            }, 1300);
         }
 
         setTimeout(() => {
