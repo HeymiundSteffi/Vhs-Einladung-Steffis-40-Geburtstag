@@ -184,24 +184,24 @@ window.addEventListener("resize", () => {
         }
 
         const bilder = [
-            "bilder/01.jpg",
-            "bilder/02.jpg",
-            "bilder/03.jpg",
-            "bilder/04.jpg",
-            "bilder/05.jpg",
-            "bilder/06.jpg",
-            "bilder/07.jpg",
-            "bilder/08.jpg",
-            "bilder/09.jpg",
-            "bilder/10.jpg",
-            "bilder/11.jpg",
-            "bilder/12.jpg",
-            "bilder/12 elias.jpeg",
-            "bilder/14.jpg",
-            "bilder/15.jpg",
-            "bilder/16.jpg"
-            "bilder/17.jpg"
-        ];
+    "bilder/01.jpg",
+    "bilder/02.jpg",
+    "bilder/03.jpg",
+    "bilder/04.jpg",
+    "bilder/05.jpg",
+    "bilder/06.jpg",
+    "bilder/07.jpg",
+    "bilder/08.jpg",
+    "bilder/09.jpg",
+    "bilder/10.jpg",
+    "bilder/11.jpg",
+    "bilder/12.jpg",
+    "bilder/12 elias.jpeg",
+    "bilder/14.jpg",
+    "bilder/15.jpg",
+    "bilder/16.jpg",
+    "bilder/17.jpg"
+];
 
         movie.style.width = "100%";
         movie.style.height = "100%";
