@@ -227,9 +227,9 @@ window.addEventListener("resize", () => {
                 setTimeout(() => {
                     index++;
                     zeigeBild();
-                }, 200);
+                }, 150);
 
-            }, 1200);
+            }, 1000);
         }
 
         setTimeout(() => {
