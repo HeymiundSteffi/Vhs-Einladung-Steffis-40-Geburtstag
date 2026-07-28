@@ -196,7 +196,7 @@ window.addEventListener("resize", () => {
             "bilder/10.jpg",
             "bilder/11.jpg",
             "bilder/12.jpg",
-            "bilder/12elias.jpeg",
+            "bilder/12 elias.jpeg",
             "bilder/14.jpg",
             "bilder/15.jpg",
             "bilder/16.jpg"
