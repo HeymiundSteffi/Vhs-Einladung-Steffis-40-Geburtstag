@@ -200,6 +200,7 @@ window.addEventListener("resize", () => {
             "bilder/14.jpg",
             "bilder/15.jpg",
             "bilder/16.jpg"
+            "bilder/17.jpg"
         ];
 
         movie.style.width = "100%";
