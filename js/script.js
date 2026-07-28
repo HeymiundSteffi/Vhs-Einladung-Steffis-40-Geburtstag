@@ -241,7 +241,7 @@ window.addEventListener("resize", () => {
                 bgMusic.play().catch(err => console.log(err));
             }
 
-        }, 2000);
+        }, 500);
 
         movie.addEventListener("ended", () => {
 
